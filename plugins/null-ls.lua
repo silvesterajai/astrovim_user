@@ -1,17 +1,20 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
-  opts = function(_, config)
-    -- config variable is the default configuration table for the setup function call
-    -- local null_ls = require "null-ls"
-
-    -- Check supported formatters and linters
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-    config.sources = {
-      -- Set a formatter
-      -- null_ls.builtins.formatting.stylua,
-      -- null_ls.builtins.formatting.prettier,
-    }
-    return config -- return final config table
+  opts = function(_, opts)
+    local null_ls = require "null-ls"
+    local formatting = null_ls.builtins.formatting
+    local diagnostics = null_ls.builtins.diagnostics
+    return require("astronvim.utils").extend_tbl(opts, {
+      sources = {
+        -- Set a formatter
+        formatting.stylua,
+        formatting.prettier,
+        formatting.shfmt,
+        formatting.nixpkgs_fmt,
+        -- Set a linter
+        diagnostics.cue_fmt,
+        diagnostics.shellcheck,
+      },
+    })
   end,
 }
