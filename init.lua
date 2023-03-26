@@ -18,12 +18,33 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "onedark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
+  },
+
+  lsp = {
+    formatting = {
+      format_on_save = {
+        enabled = true, -- enable format on save
+        allow_filetypes = { -- only allow formatting on save for these filetypes
+          "lua",
+          "yaml",
+          "go",
+          "json",
+        },
+        ignore_filetypes = { -- disable format on save for specified filetypes
+          "python",
+          "cpp",
+          "c",
+        },
+      },
+
+      timeout_ms = 1000, -- default format timeout
+    },
   },
 
   -- This function is run last and is a good place to configuring
