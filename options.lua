@@ -18,8 +18,9 @@ return {
     ui_notifications_enabled = true,  -- disable notifications when toggling UI elements
     indent_blankline_enabled = false, -- disable indent lines
     onedark_config = {
-      style = "darker",
+      style = "warmer",               -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     },
+    ayucolor = "dark",
   },
 }
 -- If you need more control, you can use the function()...end notation
