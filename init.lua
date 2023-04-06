@@ -26,7 +26,7 @@ return {
   lsp = {
     formatting = {
       format_on_save = {
-        enabled = true,     -- enable format on save
+        enabled = false,    -- enable format on save
         allow_filetypes = { -- only allow formatting on save for these filetypes
           "lua",
           "yaml",

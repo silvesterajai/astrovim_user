@@ -10,9 +10,7 @@ return {
         formatting.stylua,
         formatting.prettier,
         formatting.shfmt,
-        formatting.nixpkgs_fmt,
         -- Set a linter
-        diagnostics.cue_fmt,
         diagnostics.shellcheck,
       },
     })
